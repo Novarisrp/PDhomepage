@@ -22,7 +22,6 @@ const SITE_DATA = {
     { title: "事後処理", text: "報告、現場の片づけを行う" }
   ],
   codes: [
-   codes: [
     { code: "1", meaning: "本署待機" },
 
     { code: "1.1", meaning: "ATM強盗" },
