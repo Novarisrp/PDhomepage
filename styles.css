@@ -68,14 +68,9 @@
 }
 
 .codes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
-  gap: 18px;
-  width: min(1600px, 100%);
-  max-width: 1600px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  justify-self: center;
-  align-items: start;
 }
 
 #codes .codes-grid {
@@ -254,4 +249,43 @@
     flex: 0 0 100%;
     min-width: 0;
   }
+  /* 無線番号エリアを横幅いっぱいに使用 */
+#codes {
+  display: block;
+}
+
+.codes-section {
+  padding-inline: clamp(12px, 2vw, 32px);
+}
+
+.codes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 1800px;
+  margin-inline: auto;
+}
+
+/* 表の列幅 */
+.code-row,
+.code-header {
+  grid-template-columns:
+    52px
+    minmax(180px, 1.8fr)
+    repeat(4, minmax(70px, .8fr))
+    minmax(160px, 1.4fr)
+    repeat(2, minmax(75px, .8fr))
+    minmax(160px, 1.5fr)
+    minmax(65px, .7fr);
+  gap: 6px;
+}
+
+/* 長文を省略せず改行 */
+.code-row span,
+.code-header span {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+}
 }
