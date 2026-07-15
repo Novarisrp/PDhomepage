@@ -24,7 +24,6 @@ const SITE_DATA = {
     title: "本署待機+小型・準中型対応",
     icon: "📻",
     items: [
-      { code: "番号", meaning: "対応内容", pdCount: "PD人数", criminals: "犯罪者人数", criminalHeli: "犯罪者ヘリ台数", prison: "プリズン有無", ivTime: "押収時間(車)", ivPrice: "押収価格(車)", loot: "成果物", distortionDuration: "歪み耐久時間", hostage: "人質有無", prefire: "先撃ち", npcKill: "NPC殺人" }, 
       { code: "1", meaning: "本署待機", pdCount: "", criminals: "", criminalHeli: "", prison: "", ivTime: "", ivPrice: "", loot: "", distortionDuration: "", hostage: "", prefire: "", npcKill: "" },
       { code: "1.1", meaning: "ATM強盗", pdCount: 2, criminals: 1, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "現金", distortionDuration: "5分", hostage: "不可", prefire: "テーザーから、先撃ち不可", npcKill: "無" },
       { code: "1.2", meaning: "高級車強盗" },

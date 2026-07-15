@@ -137,10 +137,11 @@
 
 .code-row {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
+  grid-template-columns: 58px minmax(160px, 1fr) repeat(11, minmax(80px, 1fr));
   gap: 12px;
   padding: 11px 18px;
   border-bottom: 1px solid rgba(38, 57, 85, .65);
+  align-items: center;
 }
 
 .code-row:last-child {
@@ -149,6 +150,28 @@
 
 .code-row-parent {
   background: rgba(100, 168, 255, .05);
+}
+
+.code-header {
+  font-weight: 800;
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
+}
+
+.code-header span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.code-row span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-pd, .code-criminals, .code-heli, .code-prison, .code-ivtime, .code-ivprice, .code-loot, .code-distortion, .code-hostage, .code-prefire, .code-npckill {
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .code-number {

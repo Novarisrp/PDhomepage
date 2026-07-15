@@ -83,14 +83,51 @@ function renderCodes() {
           <span class="code-arrow" aria-hidden="true">▼</span>
         </summary>
         <div class="code-list">
+          <div class="code-row code-header">
+            <span class="code-number">番号</span>
+            <span class="code-meaning">対応内容</span>
+            <span class="code-pd">PD人数</span>
+            <span class="code-criminals">犯罪者人数</span>
+            <span class="code-heli">犯罪者ヘリ台数</span>
+            <span class="code-prison">プリズン</span>
+            <span class="code-ivtime">押収時間(車)</span>
+            <span class="code-ivprice">押収価格(車)</span>
+            <span class="code-loot">成果物</span>
+            <span class="code-distortion">歪み耐久時間</span>
+            <span class="code-hostage">人質有無</span>
+            <span class="code-prefire">先撃ち</span>
+            <span class="code-npckill">NPC殺人</span>
+          </div>
           <div class="code-row code-row-parent">
             <span class="code-number">${escapeHtml(parent.code)}</span>
-            <span class="code-meaning">${escapeHtml(parent.meaning)}</span>
+            <span class="code-meaning">${escapeHtml(parent.meaning || '')}</span>
+            <span class="code-pd">${escapeHtml(parent.pdCount || '')}</span>
+            <span class="code-criminals">${escapeHtml(parent.criminals || '')}</span>
+            <span class="code-heli">${escapeHtml(parent.criminalHeli || '')}</span>
+            <span class="code-prison">${escapeHtml(parent.prison || '')}</span>
+            <span class="code-ivtime">${escapeHtml(parent.ivTime || '')}</span>
+            <span class="code-ivprice">${escapeHtml(parent.ivPrice || '')}</span>
+            <span class="code-loot">${escapeHtml(parent.loot || '')}</span>
+            <span class="code-distortion">${escapeHtml(parent.distortionDuration || '')}</span>
+            <span class="code-hostage">${escapeHtml(parent.hostage || '')}</span>
+            <span class="code-prefire">${escapeHtml(parent.prefire || '')}</span>
+            <span class="code-npckill">${escapeHtml(parent.npcKill || '')}</span>
           </div>
           ${children.map((item) => `
             <div class="code-row">
               <span class="code-number">${escapeHtml(item.code)}</span>
-              <span class="code-meaning">${escapeHtml(item.meaning)}</span>
+              <span class="code-meaning">${escapeHtml(item.meaning || '')}</span>
+              <span class="code-pd">${escapeHtml(item.pdCount || '')}</span>
+              <span class="code-criminals">${escapeHtml(item.criminals || '')}</span>
+              <span class="code-heli">${escapeHtml(item.criminalHeli || '')}</span>
+              <span class="code-prison">${escapeHtml(item.prison || '')}</span>
+              <span class="code-ivtime">${escapeHtml(item.ivTime || '')}</span>
+              <span class="code-ivprice">${escapeHtml(item.ivPrice || '')}</span>
+              <span class="code-loot">${escapeHtml(item.loot || '')}</span>
+              <span class="code-distortion">${escapeHtml(item.distortionDuration || '')}</span>
+              <span class="code-hostage">${escapeHtml(item.hostage || '')}</span>
+              <span class="code-prefire">${escapeHtml(item.prefire || '')}</span>
+              <span class="code-npckill">${escapeHtml(item.npcKill || '')}</span>
             </div>
           `).join('')}
         </div>
