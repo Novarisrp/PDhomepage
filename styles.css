@@ -252,4 +252,21 @@
     flex: 0 0 100%;
     min-width: 0;
   }
+  #codes {
+  display: block;
+  padding-inline: 20px;
+}
+
+.codes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+}
+
+.code-group {
+  width: 100%;
+  max-width: none;
+}
 }
