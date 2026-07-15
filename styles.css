@@ -77,7 +77,11 @@
 }
 
 #codes .codes-grid {
-  justify-self: center;
+  justify-self: start;
+}
+
+#codes.grid2 {
+  grid-template-columns: minmax(0, 0.8fr) minmax(520px, 1.2fr);
 }
 
 .code-group {
