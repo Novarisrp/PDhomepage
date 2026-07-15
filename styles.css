@@ -140,7 +140,7 @@
 .code-row {
   display: grid;
   grid-template-columns: 58px minmax(180px, 1.6fr) repeat(11, minmax(90px, 1fr));
-  gap: 10px;
+  gap: 8px;
   padding: 11px 18px;
   border-bottom: 1px solid rgba(38, 57, 85, .65);
   align-items: center;
