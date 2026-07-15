@@ -26,48 +26,46 @@ const SITE_DATA = {
     items: [
       { code: "1", meaning: "本署待機", pdCount: "", criminals: "", criminalHeli: "", prison: "", ivTime: "", ivPrice: "", loot: "", distortionDuration: "", hostage: "", prefire: "", npcKill: "" },
       { code: "1.1", meaning: "ATM強盗", pdCount: 2, criminals: 1, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "現金", distortionDuration: "5分", hostage: "不可", prefire: "テーザーから、先撃ち不可", npcKill: "無" },
-      { code: "1.2", meaning: "高級車強盗" },
-      { code: "1.3", meaning: "家強盗" },
-      { code: "1.4", meaning: "コンビニ強盗" },
-      { code: "1.5", meaning: "フリーカ強盗" },
-      { code: "1.6", meaning: "現金輸送強盗" },
-      { code: "1.7", meaning: "バージ強盗" }
-    ]
+      { code: "1.2", meaning: "高級車強盗", pdCount: 2, criminals: 1, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "高級車", distortionDuration: "5分", hostage: "不可", prefire: "テーザーから、先撃ち不可", npcKill: "無"  },
+      { code: "1.3", meaning: "家強盗" , pdCount: 3, criminals: 1, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "物品・現金", distortionDuration: "5分", hostage: "不可", prefire: "テーザーから、先撃ち不可", npcKill: "無" },
+      { code: "1.4", meaning: "コンビニ強盗", pdCount: 2, criminals: 2, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "現金", distortionDuration: "5分", hostage: "有", prefire: "テーザーから、先撃ち不可", npcKill: "無" },
+      { code: "1.5", meaning: "フリーカ強盗", pdCount: 3, criminals: 2, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "現金", distortionDuration: "5分", hostage: "有", prefire: "テーザーから、先撃ち不可", npcKill: "無" },
+      { code: "1.6", meaning: "現金輸送強盗", pdCount: 3, criminals: 2, criminalHeli: "禁止", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "ブラックマネー", distortionDuration: "5分", hostage: "不可", prefire: "先撃ち可", npcKill: "有" }
   },
   {
     title: "中型対応",
     icon: "📻",
     items: [
-      { code: "2", meaning: "軍事基地強盗" },
-      { code: "2.1", meaning: "宝石店強盗" },
-      { code: "2.2", meaning: "絵画強盗" }
+      { code: "2", meaning: "軍事基地強盗" ,pdCount: 7, criminals: 5, criminalHeli: "1", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "ブラックマネー", distortionDuration: "5分", hostage: "不可", prefire: "先撃ち可", npcKill: "有"},
+      { code: "2.1", meaning: "宝石店強盗",pdCount: 8, criminals: 6, criminalHeli: "1", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "物品", distortionDuration: "5分", hostage: "不可", prefire: "先撃ち可", npcKill: "無" },
+      { code: "2.2", meaning: "絵画強盗" ,pdCount: 4, criminals: 2, criminalHeli: "1", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "物品", distortionDuration: "5分", hostage: "不可", prefire: "先撃ち可", npcKill: "無"}
     ]
   },
   {
     title: "準大型対応",
     icon: "📻",
     items: [
-      { code: "3", meaning: "ボブキャット強盗" },
-      { code: "3", meaning: "列車強盗" },
-      { code: "3", meaning: "客船強盗" }
+      { code: "3", meaning: "ボブキャット強盗" ,pdCount: 9, criminals: 7, criminalHeli: "1", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "武器・ブラックマネー", distortionDuration: "5分", hostage: "不可", prefire: "先撃ち可", npcKill: "有"},
+      { code: "3", meaning: "列車強盗" ,pdCount: 9, criminals: 7, criminalHeli: "1", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "ブラックマネー", distortionDuration: "5分", hostage: "不可", prefire: "先撃ち可", npcKill: "有"},
+      { code: "3", meaning: "客船強盗" ,pdCount: 10, criminals: 8, criminalHeli: "1", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "物品・ブラックマネー", distortionDuration: "5分", hostage: "不可", prefire: "先撃ち可", npcKill: "有"}
     ]
   },
   {
     title: "大型対応",
     icon: "📻",
     items: [
-      { code: "4", meaning: "アーティファクト強盗" },
-      { code: "4", meaning: "飛行場強盗" },
-      { code: "4", meaning: "ユニオン強盗" }
+      { code: "4", meaning: "アーティファクト強盗" ,pdCount: 11, criminals: 9, criminalHeli: "2", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "物品・換金後ブラックマネー", distortionDuration: "10分", hostage: "不可", prefire: "先撃ち可", npcKill: "有"},
+      { code: "4", meaning: "飛行場強盗",pdCount: 11, criminals: 9, criminalHeli: "2", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "ブラックマネー", distortionDuration: "10分", hostage: "不可", prefire: "先撃ち可", npcKill: "有" },
+      { code: "4", meaning: "ユニオン強盗",pdCount: 12, criminals: 10, criminalHeli: "2", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "物品・換金後ブラックマネー", distortionDuration: "10分", hostage: "不可", prefire: "先撃ち可", npcKill: "無" }
     ]
   },
   {
     title: "超大型対応",
     icon: "📻",
     items: [
-      { code: "5", meaning: "カジノ強盗" },
-      { code: "5", meaning: "カヨペリコ強盗" },
-      { code: "5", meaning: "パシフィック強盗" }
+      { code: "5", meaning: "カジノ強盗" ,pdCount: 17, criminals: 15, criminalHeli: "3", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "物品・換金後ブラックマネー", distortionDuration: "10分", hostage: "不可", prefire: "先撃ち可", npcKill: "有"},
+      { code: "5", meaning: "カヨペリコ強盗" ,pdCount: 18, criminals: 15, criminalHeli: "3", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "物品・換金後ブラックマネー", distortionDuration: "10分", hostage: "不可", prefire: "先撃ち可", npcKill: "有"},
+      { code: "5", meaning: "パシフィック強盗" ,pdCount: 17, criminals: 15, criminalHeli: "3", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "物品・換金後ブラックマネー", distortionDuration: "10分", hostage: "不可", prefire: "先撃ち可", npcKill: "有"}
     ]
   }
 ],
