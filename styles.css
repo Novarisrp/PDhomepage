@@ -77,8 +77,8 @@
 }
 
 #codes .codes-grid {
-  justify-self: start;
-  margin-left: 160px;
+  justify-self: stretch;
+  margin-left: 0;
 }
 
 #codes.grid2 {
@@ -269,8 +269,6 @@
 
 #codes {
   display: block;
-  padding-inline: 20px;
-  justify-items: start;
 }
 
 #codes.grid2 {
