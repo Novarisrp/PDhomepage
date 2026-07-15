@@ -257,21 +257,27 @@
     flex: 0 0 100%;
     min-width: 0;
   }
-  #codes {
+}
+
+#codes {
   display: block;
   padding-inline: 20px;
+  justify-items: start;
+}
+
+#codes.grid2 {
+  grid-template-columns: minmax(0, 0.35fr) minmax(520px, 1.65fr);
 }
 
 .codes-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  width: 100%;
-  max-width: none;
-  margin: 0 auto;
+  justify-self: start;
+  width: auto;
+  max-width: 1300px;
+  margin: 0;
 }
 
 .code-group {
   width: 100%;
   max-width: none;
 }
-}
+
