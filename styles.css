@@ -50,3 +50,152 @@
   margin: 6px 0;
   line-height: 1.7;
 }
+
+/* 無線番号: 全幅・中央寄せ・レスポンシブ複数列 */
+.codes-section {
+  padding-inline: clamp(20px, 7vw, 110px);
+}
+
+.codes-heading {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.codes-heading p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.codes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  align-items: start;
+}
+
+.code-group {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--panel2), var(--panel));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+}
+
+.code-group summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.code-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.code-summary-number {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: rgba(100, 168, 255, .16);
+  color: var(--accent);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.code-summary-meaning {
+  min-width: 0;
+  color: var(--text);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.code-arrow {
+  color: var(--gold);
+  font-size: 13px;
+  transition: transform .2s ease;
+}
+
+.code-group:not([open]) .code-arrow {
+  transform: rotate(-90deg);
+}
+
+.code-list {
+  border-top: 1px solid var(--line);
+  background: rgba(4, 10, 19, .3);
+}
+
+.code-row {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 18px;
+  border-bottom: 1px solid rgba(38, 57, 85, .65);
+}
+
+.code-row:last-child {
+  border-bottom: 0;
+}
+
+.code-row-parent {
+  background: rgba(100, 168, 255, .05);
+}
+
+.code-number {
+  color: var(--gold);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.code-meaning {
+  min-width: 0;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.rule-icon {
+  margin-right: 10px;
+}
+
+.step h3 {
+  margin: 4px 0 6px;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .codes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .codes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .codes-heading {
+    text-align: left;
+  }
+
+  .code-group summary {
+    padding: 14px;
+  }
+
+  .code-row {
+    padding: 10px 14px;
+  }
+}

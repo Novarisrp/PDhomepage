@@ -1,82 +1,126 @@
-const el = (tag, cls, html) => {
-  const n = document.createElement(tag);
-  if (cls) n.className = cls;
-  if (html) n.innerHTML = html;
-  return n;
-};
+'use strict';
 
-function renderCards(id, rows = []) {
-  const root = document.getElementById(id);
-  if (!root) return;
+const escapeHtml = (value) => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&#039;');
 
-  rows.forEach(r => {
-    root.appendChild(
-      el("article", "card", `<h3>${r.title}</h3><p>${r.text}</p>`)
-    );
-  });
+function renderCards(targetId, items) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+
+  target.innerHTML = items.map((item) => `
+    <article class="card">
+      <h3>${escapeHtml(item.title)}</h3>
+      <p>${escapeHtml(item.text)}</p>
+    </article>
+  `).join('');
 }
 
 function renderRules() {
-  const tb = document.querySelector("#rulesTable tbody");
-  if (!tb || !SITE_DATA.rules) return;
+  const tbody = document.querySelector('#rulesTable tbody');
+  if (!tbody) return;
 
-  SITE_DATA.rules.forEach(r => {
-    tb.appendChild(
-      el("tr", "", `<td>${r.item}</td><td>${r.content}</td><td>${r.note}</td>`)
-    );
+  tbody.innerHTML = SITE_DATA.rules.map((rule) => `
+    <tr>
+      <td>${escapeHtml(rule.item)}</td>
+      <td>${escapeHtml(rule.content)}</td>
+      <td>${escapeHtml(rule.note)}</td>
+    </tr>
+  `).join('');
+}
+
+function renderDetailRules() {
+  const target = document.getElementById('detailRules');
+  if (!target) return;
+
+  target.innerHTML = SITE_DATA.detailRules.map((rule) => `
+    <details class="rule-card">
+      <summary><span class="rule-icon">${escapeHtml(rule.icon)}</span>${escapeHtml(rule.title)}</summary>
+      <div class="rule-card-body">
+        ${rule.blocks.map((block) => `
+          <section class="rule-block">
+            <h4>${escapeHtml(block.heading)}</h4>
+            <ul>
+              ${block.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
+            </ul>
+          </section>
+        `).join('')}
+      </div>
+    </details>
+  `).join('');
+}
+
+function renderFlow() {
+  const target = document.getElementById('flowSteps');
+  if (!target) return;
+
+  target.innerHTML = SITE_DATA.flows.map((flow, index) => `
+    <article class="step">
+      <div class="step-num">${String(index + 1).padStart(2, '0')}</div>
+      <h3>${escapeHtml(flow.title)}</h3>
+      <p>${escapeHtml(flow.text)}</p>
+    </article>
+  `).join('');
+}
+
+function groupRadioCodes(codes) {
+  const groups = new Map();
+
+  codes.forEach((item) => {
+    const groupCode = item.code.split('.')[0];
+    if (!groups.has(groupCode)) groups.set(groupCode, []);
+    groups.get(groupCode).push(item);
+  });
+
+  return [...groups.entries()].map(([groupCode, items]) => {
+    const exactParent = items.find((item) => item.code === groupCode);
+    const parent = exactParent || items[0];
+    const parentIndex = items.indexOf(parent);
+    const children = items.filter((_, index) => index !== parentIndex);
+
+    return { groupCode, parent, children };
   });
 }
 
 function renderCodes() {
-  const tb = document.querySelector("#codesTable tbody");
-  if (!tb || !SITE_DATA.codes) return;
+  const target = document.getElementById('codesGrid');
+  if (!target) return;
 
-  SITE_DATA.codes.forEach(r => {
-    tb.appendChild(
-      el("tr", "", `<td><strong>${r.code}</strong></td><td>${r.meaning}</td>`)
-    );
-  });
-}
+  const groups = groupRadioCodes(SITE_DATA.codes);
 
-function renderSteps() {
-  const root = document.getElementById("flowSteps");
-  if (!root || !SITE_DATA.flows) return;
-
-  SITE_DATA.flows.forEach((r, i) => {
-    root.appendChild(
-      el(
-        "article",
-        "step",
-        `<div class="step-num">${String(i + 1).padStart(2, "0")}</div><h3>${r.title}</h3><p>${r.text}</p>`
-      )
-    );
-  });
-}
-
-function renderDetailRules() {
-  const container = document.getElementById("detailRules");
-  if (!container || !SITE_DATA.detailRules) return;
-
-  container.innerHTML = SITE_DATA.detailRules.map(rule => `
-    <details class="rule-card">
-      <summary>${rule.icon} ${rule.title}</summary>
-      <div class="rule-card-body">
-        ${rule.blocks.map(block => `
-          <div class="rule-block">
-            <h4>${block.heading}</h4>
-            <ul>
-              ${block.items.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+  target.innerHTML = groups.map(({ groupCode, parent, children }, index) => `
+    <details class="code-group"${index === 0 ? ' open' : ''}>
+      <summary>
+        <span class="code-summary-number">${escapeHtml(groupCode)}</span>
+        <span class="code-summary-meaning">${escapeHtml(parent.meaning)}</span>
+        <span class="code-arrow" aria-hidden="true">▼</span>
+      </summary>
+      <div class="code-list">
+        <div class="code-row code-row-parent">
+          <span class="code-number">${escapeHtml(parent.code)}</span>
+          <span class="code-meaning">${escapeHtml(parent.meaning)}</span>
+        </div>
+        ${children.map((item) => `
+          <div class="code-row">
+            <span class="code-number">${escapeHtml(item.code)}</span>
+            <span class="code-meaning">${escapeHtml(item.meaning)}</span>
           </div>
-        `).join("")}
+        `).join('')}
       </div>
     </details>
-  `).join("");
+  `).join('');
 }
 
-renderCards("missionCards", SITE_DATA.missions);
-renderCards("joinCards", SITE_DATA.joins);
-renderRules();
-renderCodes();
-renderSteps();
-renderDetailRules();
+function init() {
+  renderCards('missionCards', SITE_DATA.missions);
+  renderRules();
+  renderDetailRules();
+  renderFlow();
+  renderCodes();
+  renderCards('joinCards', SITE_DATA.joins);
+}
+
+document.addEventListener('DOMContentLoaded', init);
