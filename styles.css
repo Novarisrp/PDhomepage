@@ -68,6 +68,8 @@
 }
 
 .codes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   width: 100%;
   max-width: none;
   margin: 0 auto;
@@ -157,7 +159,7 @@
 
 .code-header {
   display: grid;
-  grid-template-columns: 58px minmax(120px, 1.8fr) repeat(11, minmax(90px, 1fr));
+  grid-template-columns: 58px minmax(120px, 1.8fr) repeat(11, minmax(95px, 1fr));
   gap: 4px;
   background: rgba(255,255,255,0.02);
 }
