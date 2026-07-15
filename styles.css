@@ -69,9 +69,9 @@
 
 .codes-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
   gap: 18px;
-  width: min(1180px, 100%);
+  width: min(1700px, 100%);
   margin: 0 auto;
   align-items: start;
 }
@@ -133,8 +133,8 @@
 .code-list {
   border-top: 1px solid var(--line);
   background: rgba(4, 10, 19, .3);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .code-row {
@@ -155,15 +155,17 @@
 }
 
 .code-header {
-  font-weight: 800;
-  color: var(--text);
-  background: rgba(255,255,255,0.02);
+   display: grid;
+   grid-template-columns: 58px minmax(240px, 2fr) repeat(11, minmax(110px, 1fr));
+   font-weight: 800;
+   color: var(--text);
+   background: rgba(255,255,255,0.02);
 }
 
 .code-header span {
-  color: var(--muted);
-  font-size: 13px;
-}
+   color: var(--muted);
+   font-size: 13px;
+   white-space: normal;
 
 .code-row span {
   overflow: hidden;
