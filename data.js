@@ -19,34 +19,58 @@ const SITE_DATA = {
     { title: "対応実施", text: "追跡・制圧・逮捕を状況に応じて選択。" },
     { title: "事後処理", text: "報告、現場の片づけを行う" }
   ],
-  codes: [
-    { code: "1", meaning: "本署待機" },
-
-    { code: "1.1", meaning: "ATM強盗" },
-    { code: "1.2", meaning: "高級車強盗" },
-    { code: "1.3", meaning: "家強盗" },
-    { code: "1.4", meaning: "コンビニ強盗" },
-    { code: "1.5", meaning: "フリーカ強盗" },
-
-    { code: "1.6", meaning: "現金輸送強盗" },
-    { code: "1.7", meaning: "バージ強盗" },
-
-    { code: "2", meaning: "軍事基地強盗" },
-    { code: "2.1", meaning: "宝石店強盗" },
-    { code: "2.2", meaning: "絵画強盗" },
-
-    { code: "3", meaning: "ボブキャット強盗" },
-    { code: "3", meaning: "列車強盗" },
-    { code: "3", meaning: "客船強盗" },
-
-    { code: "4", meaning: "アーティファクト強盗" },
-    { code: "4", meaning: "飛行場強盗" },
-    { code: "4", meaning: "ユニオン強盗" },
-
-    { code: "5", meaning: "カジノ強盗" },
-    { code: "5", meaning: "カヨペリコ強盗" },
-    { code: "5", meaning: "パシフィック強盗" }
-  ],
+ codes: [
+  {
+    title: "1. 本署待機+小型・準中型対応",
+    icon: "📻",
+    items: [
+      { code: "1", meaning: "本署待機" },
+      { code: "1.1", meaning: "ATM強盗" },
+      { code: "1.2", meaning: "高級車強盗" },
+      { code: "1.3", meaning: "家強盗" },
+      { code: "1.4", meaning: "コンビニ強盗" },
+      { code: "1.5", meaning: "フリーカ強盗" },
+      { code: "1.6", meaning: "現金輸送強盗" },
+      { code: "1.7", meaning: "バージ強盗" }
+    ]
+  },
+  {
+    title: "2. 中型対応",
+    icon: "📻",
+    items: [
+      { code: "2", meaning: "軍事基地強盗" },
+      { code: "2.1", meaning: "宝石店強盗" },
+      { code: "2.2", meaning: "絵画強盗" }
+    ]
+  },
+  {
+    title: "3. 準大型対応",
+    icon: "📻",
+    items: [
+      { code: "3", meaning: "ボブキャット強盗" },
+      { code: "3", meaning: "列車強盗" },
+      { code: "3", meaning: "客船強盗" }
+    ]
+  },
+  {
+    title: "4. 大型対応",
+    icon: "📻",
+    items: [
+      { code: "4", meaning: "アーティファクト強盗" },
+      { code: "4", meaning: "飛行場強盗" },
+      { code: "4", meaning: "ユニオン強盗" }
+    ]
+  },
+  {
+    title: "5. 超大型対応",
+    icon: "📻",
+    items: [
+      { code: "5", meaning: "カジノ強盗" },
+      { code: "5", meaning: "カヨペリコ強盗" },
+      { code: "5", meaning: "パシフィック強盗" }
+    ]
+  }
+],
   joins: [
     { title: "1. ルール確認", text: "サーバールールと警察ルールを読み、活動方針を理解します。" },
     { title: "2. 面接", text: "志望理由、活動時間、RP方針を確認します。" },
