@@ -31,6 +31,7 @@ const SITE_DATA = {
       { code: "1.4", meaning: "コンビニ強盗", pdCount: 2, criminals: 2, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "現金", distortionDuration: "5分", hostage: "有", prefire: "テーザーから、先撃ち不可", npcKill: "無" },
       { code: "1.5", meaning: "フリーカ強盗", pdCount: 3, criminals: 2, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "現金", distortionDuration: "5分", hostage: "有", prefire: "テーザーから、先撃ち不可", npcKill: "無" },
       { code: "1.6", meaning: "現金輸送強盗", pdCount: 3, criminals: 2, criminalHeli: "禁止", prison: "5分", ivTime: "30分", ivPrice: "10万", loot: "ブラックマネー", distortionDuration: "5分", hostage: "不可", prefire: "先撃ち可", npcKill: "有" }
+    ]
   },
   {
     title: "中型対応",
