@@ -78,10 +78,11 @@
 
 #codes .codes-grid {
   justify-self: start;
+  margin-left: 20px;
 }
 
 #codes.grid2 {
-  grid-template-columns: minmax(0, 0.55fr) minmax(520px, 1.45fr);
+  grid-template-columns: minmax(0, 0.75fr) minmax(520px, 1.25fr);
 }
 
 .code-group {
