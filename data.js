@@ -21,11 +21,11 @@ const SITE_DATA = {
   ],
  codes: [
   {
-    title: "1. 本署待機+小型・準中型対応",
+    title: "本署待機+小型・準中型対応",
     icon: "📻",
     items: [
-      { code: "1", meaning: "本署待機" },
-      { code: "1.1", meaning: "ATM強盗" },
+      { code: "1", meaning: "本署待機", pdCount: "", criminals: "", criminalHeli: "", prison: "", ivTime: "", ivPrice: "", loot: "", distortionDuration: "", hostage: "", prefire: "", npcKill: "" },
+      { code: "1.1", meaning: "ATM強盗", pdCount: 2, criminals: 1, criminalHeli: "禁止", prison: "1分", ivTime: "30分", ivPrice: "10万", loot: "現金", distortionDuration: "5分", hostage: "不可", prefire: "テーザーから、先撃ち不可", npcKill: "無" },
       { code: "1.2", meaning: "高級車強盗" },
       { code: "1.3", meaning: "家強盗" },
       { code: "1.4", meaning: "コンビニ強盗" },
@@ -35,7 +35,7 @@ const SITE_DATA = {
     ]
   },
   {
-    title: "2. 中型対応",
+    title: "中型対応",
     icon: "📻",
     items: [
       { code: "2", meaning: "軍事基地強盗" },
@@ -44,7 +44,7 @@ const SITE_DATA = {
     ]
   },
   {
-    title: "3. 準大型対応",
+    title: "準大型対応",
     icon: "📻",
     items: [
       { code: "3", meaning: "ボブキャット強盗" },
@@ -53,7 +53,7 @@ const SITE_DATA = {
     ]
   },
   {
-    title: "4. 大型対応",
+    title: "大型対応",
     icon: "📻",
     items: [
       { code: "4", meaning: "アーティファクト強盗" },
@@ -62,7 +62,7 @@ const SITE_DATA = {
     ]
   },
   {
-    title: "5. 超大型対応",
+    title: "超大型対応",
     icon: "📻",
     items: [
       { code: "5", meaning: "カジノ強盗" },
