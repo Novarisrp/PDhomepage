@@ -182,6 +182,13 @@
   white-space: nowrap;
 }
 
+.code-row .code-prefire {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .code-pd, .code-criminals, .code-heli, .code-prison, .code-ivtime, .code-ivprice, .code-loot, .code-distortion, .code-hostage, .code-prefire, .code-npckill {
   color: var(--muted);
   font-size: 13px;
