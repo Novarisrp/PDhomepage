@@ -72,8 +72,8 @@
   grid-template-columns: repeat(auto-fit, minmax(720px, 1fr));
   gap: 18px;
   width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
+  max-width: 1300px;
+  margin: 0;
 }
 
 #codes .codes-grid {
@@ -81,7 +81,7 @@
 }
 
 #codes.grid2 {
-  grid-template-columns: minmax(0, 0.8fr) minmax(520px, 1.2fr);
+  grid-template-columns: minmax(0, 0.55fr) minmax(520px, 1.45fr);
 }
 
 .code-group {
