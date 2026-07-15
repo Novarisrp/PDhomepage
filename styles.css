@@ -78,7 +78,7 @@
 
 .code-group {
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: linear-gradient(180deg, var(--panel2), var(--panel));
@@ -133,6 +133,8 @@
 .code-list {
   border-top: 1px solid var(--line);
   background: rgba(4, 10, 19, .3);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .code-row {
