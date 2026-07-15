@@ -138,8 +138,8 @@
 }
 
 .code-row {
-  display: grid;
-  grid-template-columns: 58px minmax(160px, 1fr) repeat(11, minmax(80px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   padding: 11px 18px;
   border-bottom: 1px solid rgba(38, 57, 85, .65);
@@ -169,6 +169,30 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.code-row .code-number {
+  flex: 0 0 58px;
+}
+
+.code-row .code-meaning {
+  flex: 1 1 220px;
+  min-width: 160px;
+}
+
+.code-row .code-pd,
+.code-row .code-criminals,
+.code-row .code-heli,
+.code-row .code-prison,
+.code-row .code-ivtime,
+.code-row .code-ivprice,
+.code-row .code-loot,
+.code-row .code-distortion,
+.code-row .code-hostage,
+.code-row .code-prefire,
+.code-row .code-npckill {
+  flex: 0 0 120px;
+  min-width: 100px;
 }
 
 .code-pd, .code-criminals, .code-heli, .code-prison, .code-ivtime, .code-ivprice, .code-loot, .code-distortion, .code-hostage, .code-prefire, .code-npckill {
@@ -222,5 +246,22 @@
 
   .code-row {
     padding: 10px 14px;
+  }
+
+  .code-row .code-number,
+  .code-row .code-meaning,
+  .code-row .code-pd,
+  .code-row .code-criminals,
+  .code-row .code-heli,
+  .code-row .code-prison,
+  .code-row .code-ivtime,
+  .code-row .code-ivprice,
+  .code-row .code-loot,
+  .code-row .code-distortion,
+  .code-row .code-hostage,
+  .code-row .code-prefire,
+  .code-row .code-npckill {
+    flex: 0 0 100%;
+    min-width: 0;
   }
 }
