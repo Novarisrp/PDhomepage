@@ -66,52 +66,37 @@ function renderFlow() {
   `).join('');
 }
 
-function groupRadioCodes(codes) {
-  const groups = new Map();
-
-  codes.forEach((item) => {
-    const groupCode = item.code.split('.')[0];
-    if (!groups.has(groupCode)) groups.set(groupCode, []);
-    groups.get(groupCode).push(item);
-  });
-
-  return [...groups.entries()].map(([groupCode, items]) => {
-    const exactParent = items.find((item) => item.code === groupCode);
-    const parent = exactParent || items[0];
-    const parentIndex = items.indexOf(parent);
-    const children = items.filter((_, index) => index !== parentIndex);
-
-    return { groupCode, parent, children };
-  });
-}
-
 function renderCodes() {
   const target = document.getElementById('codesGrid');
   if (!target) return;
 
-  const groups = groupRadioCodes(SITE_DATA.codes);
+  target.innerHTML = SITE_DATA.codes.map((group, index) => {
+    const parent = group.items[0];
+    const children = group.items.slice(1);
+    const groupCode = parent.code.split('.')[0];
 
-  target.innerHTML = groups.map(({ groupCode, parent, children }, index) => `
-    <details class="code-group"${index === 0 ? ' open' : ''}>
-      <summary>
-        <span class="code-summary-number">${escapeHtml(groupCode)}</span>
-        <span class="code-summary-meaning">${escapeHtml(parent.meaning)}</span>
-        <span class="code-arrow" aria-hidden="true">▼</span>
-      </summary>
-      <div class="code-list">
-        <div class="code-row code-row-parent">
-          <span class="code-number">${escapeHtml(parent.code)}</span>
-          <span class="code-meaning">${escapeHtml(parent.meaning)}</span>
-        </div>
-        ${children.map((item) => `
-          <div class="code-row">
-            <span class="code-number">${escapeHtml(item.code)}</span>
-            <span class="code-meaning">${escapeHtml(item.meaning)}</span>
+    return `
+      <details class="code-group"${index === 0 ? ' open' : ''}>
+        <summary>
+          <span class="code-summary-number">${escapeHtml(groupCode)}</span>
+          <span class="code-summary-meaning">${escapeHtml(group.title)}</span>
+          <span class="code-arrow" aria-hidden="true">▼</span>
+        </summary>
+        <div class="code-list">
+          <div class="code-row code-row-parent">
+            <span class="code-number">${escapeHtml(parent.code)}</span>
+            <span class="code-meaning">${escapeHtml(parent.meaning)}</span>
           </div>
-        `).join('')}
-      </div>
-    </details>
-  `).join('');
+          ${children.map((item) => `
+            <div class="code-row">
+              <span class="code-number">${escapeHtml(item.code)}</span>
+              <span class="code-meaning">${escapeHtml(item.meaning)}</span>
+            </div>
+          `).join('')}
+        </div>
+      </details>
+    `;
+  }).join('');
 }
 
 function init() {
