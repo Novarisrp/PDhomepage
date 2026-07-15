@@ -138,8 +138,8 @@
 }
 
 .code-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 58px minmax(240px, 2fr) repeat(11, minmax(100px, 1fr));
   gap: 12px;
   padding: 11px 18px;
   border-bottom: 1px solid rgba(38, 57, 85, .65);
@@ -155,46 +155,25 @@
 }
 
 .code-header {
-   display: grid;
-   grid-template-columns: 58px minmax(240px, 2fr) repeat(11, minmax(110px, 1fr));
-   font-weight: 800;
-   color: var(--text);
-   background: rgba(255,255,255,0.02);
+  display: grid;
+  grid-template-columns: 58px minmax(240px, 2fr) repeat(11, minmax(100px, 1fr));
+  gap: 12px;
+  align-items: center;
+  font-weight: 800;
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
 }
 
 .code-header span {
-   color: var(--muted);
-   font-size: 13px;
-   white-space: normal;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: normal;
+}
 
 .code-row span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.code-row .code-number {
-  flex: 0 0 58px;
-}
-
-.code-row .code-meaning {
-  flex: 1 1 220px;
-  min-width: 160px;
-}
-
-.code-row .code-pd,
-.code-row .code-criminals,
-.code-row .code-heli,
-.code-row .code-prison,
-.code-row .code-ivtime,
-.code-row .code-ivprice,
-.code-row .code-loot,
-.code-row .code-distortion,
-.code-row .code-hostage,
-.code-row .code-prefire,
-.code-row .code-npckill {
-  flex: 0 0 120px;
-  min-width: 100px;
 }
 
 .code-pd, .code-criminals, .code-heli, .code-prison, .code-ivtime, .code-ivprice, .code-loot, .code-distortion, .code-hostage, .code-prefire, .code-npckill {
@@ -210,6 +189,7 @@
 
 .code-meaning {
   min-width: 0;
+
   color: var(--muted);
   overflow-wrap: anywhere;
 }
